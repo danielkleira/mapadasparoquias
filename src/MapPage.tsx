@@ -12,7 +12,7 @@ export default function MapPage() {
       <h1 className="title">Mapa das Paróquias, missas e confissões</h1>
 
       <div className="map-wrapper">
-        <Map height={600} defaultCenter={[-22.911, -43.18]} defaultZoom={13}>
+        <Map height={600} defaultCenter={[-22.911, -43.18]} defaultZoom={12}>
           {churches.map((church) => (
             <Overlay key={church.id} anchor={[church.lat, church.lng]}>
               <div
