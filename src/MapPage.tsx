@@ -19,7 +19,7 @@ export default function MapPage() {
                 className="custom-marker"
                 onClick={() => setSelectedChurch(church)}
               >
-                ⛪
+                <div className="marker-icon">⛪</div>
               </div>
             </Overlay>
           ))}

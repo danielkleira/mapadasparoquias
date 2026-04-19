@@ -34,7 +34,7 @@
   max-height: 90%;
   overflow-y: auto;
 
-  background: rgba(15, 23, 42, 0.95); /* fundo escuro com transparência */
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(8px);
 
   border-radius: 12px;
@@ -63,7 +63,7 @@
   margin-top: 12px;
   margin-bottom: 6px;
   font-size: 16px;
-  color: #facc15; /* amarelo suave */
+  color: #facc15;
 }
 
 /* Itens */
@@ -123,7 +123,7 @@
   transform: translate(-50%, -100%) rotate(-45deg);
   cursor: pointer;
 
-  background: #ef4444; /* vermelho chamativo */
+  background: #ef4444;
   width: 40px;
   height: 40px;
 
@@ -136,10 +136,10 @@
 
   transition: 0.2s;
 }
+.marker-icon {
+  transform: rotate(45deg); /* compensar a rotação do custom-maker */
+}
 
-/* Ícone dentro */
-
-/* Hover */
 .custom-marker:hover {
   background: #dc2626;
   transform: translate(-50%, -100%) rotate(-45deg) scale(1.1);
