@@ -1,0 +1,167 @@
+/* Container geral */
+.map-container {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a; /* azul escuro */
+  color: #f1f5f9; /* texto claro */
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Título */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e2e8f0;
+}
+
+/* Wrapper do mapa */
+.map-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Painel lateral */
+.church-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  max-height: 90%;
+  overflow-y: auto;
+
+  background: rgba(15, 23, 42, 0.95); /* fundo escuro com transparência */
+  backdrop-filter: blur(8px);
+
+  border-radius: 12px;
+  padding: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Título da igreja */
+.church-panel h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #38bdf8; /* azul claro */
+}
+
+/* Endereço */
+.address {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #cbd5f5;
+}
+
+/* Seções */
+.church-panel h3 {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #facc15; /* amarelo suave */
+}
+
+/* Itens */
+.item {
+  font-size: 14px;
+  margin-bottom: 4px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Botão */
+.church-panel button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 8px;
+
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.church-panel button:hover {
+  background: #0ea5e9;
+}
+
+/* Scroll bonito */
+.church-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.church-panel::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .church-panel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: auto;
+    width: 100%;
+    max-height: 60%;
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+.custom-marker {
+  transform: translate(-50%, -100%) rotate(-45deg);
+  cursor: pointer;
+
+  background: #ef4444; /* vermelho chamativo */
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+
+  transition: 0.2s;
+}
+
+/* Ícone dentro */
+
+/* Hover */
+.custom-marker:hover {
+  background: #dc2626;
+  transform: translate(-50%, -100%) rotate(-45deg) scale(1.1);
+}
+
+.form-link-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  margin-top: 5vh;
+}
+
+.form-button {
+  background: #22c55e;
+  color: #0f172a;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.form-button:hover {
+  background: #16a34a;
+}
