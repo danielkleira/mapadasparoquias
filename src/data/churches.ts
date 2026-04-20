@@ -60,14 +60,7 @@ export const churches: Church[] = [
     lat: -22.9432,
     lng: -43.1823,
     address: "Praia de Botafogo, 266 - Botafogo-RJ",
-    confession_times: [
-      {
-        day: "Não disponível",
-        start: "",
-        end: "",
-        type: "Confissão",
-      },
-    ],
+    confession_times: [],
     mass_times: [
       {
         day: "Segunda a Sábado",
@@ -125,14 +118,7 @@ export const churches: Church[] = [
     lng: -43.3988,
     address:
       "Estrada Rodrigues Caldas, 3428 - Jacarepaguá, Rio de Janeiro - RJ",
-    confession_times: [
-      {
-        day: "Não disponível",
-        start: "",
-        end: "",
-        type: "Confissão",
-      },
-    ],
+    confession_times: [],
     mass_times: [
       {
         day: "Domingo",
@@ -148,14 +134,7 @@ export const churches: Church[] = [
     lat: -22.9188,
     lng: -43.373,
     address: "R. Bacairis, 390 - Taquara, Rio de Janeiro - RJ",
-    confession_times: [
-      {
-        day: "Não disponível",
-        start: "",
-        end: "",
-        type: "Confissão",
-      },
-    ],
+    confession_times: [],
     mass_times: [
       {
         day: "Segunda, Quarta e Sexta",
