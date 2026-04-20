@@ -123,7 +123,6 @@
   transform: translate(-50%, -100%) rotate(-45deg);
   cursor: pointer;
 
-  background: #ef4444;
   width: 40px;
   height: 40px;
 
@@ -136,20 +135,54 @@
 
   transition: 0.2s;
 }
+
+/* Ícone continua normal */
 .marker-icon {
-  transform: rotate(45deg); /* compensar a rotação do custom-maker */
+  transform: rotate(45deg);
 }
 
-.custom-marker:hover {
+/* 🟢 Verde total */
+.custom-marker.full {
+  background: #22c55e;
+}
+
+/* 🔴 Vermelho total */
+.custom-marker.none {
+  background: #ef4444;
+}
+
+/* 🟡 Metade verde / vermelho */
+.custom-marker.halfConfession {
+  background: linear-gradient(
+    135deg,
+    /* ajustado por causa da rotação */ #22c55e 50%,
+    #ef4444 50%
+  );
+}
+.custom-marker.halfMass {
+  background: linear-gradient(135deg, #ef4444 50%, #22c55e 50%);
+}
+
+/* Hover (mantém lógica de cor) */
+.custom-marker.full:hover {
+  background: #16a34a;
+}
+
+.custom-marker.none:hover {
   background: #dc2626;
+}
+
+.custom-marker.half:hover {
+  background: linear-gradient(135deg, #16a34a 50%, #dc2626 50%);
+}
+
+/* efeito de hover geral */
+.custom-marker:hover {
   transform: translate(-50%, -100%) rotate(-45deg) scale(1.1);
 }
-
 .form-link-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
-  margin-top: 5vh;
 }
 
 .form-button {
@@ -164,4 +197,86 @@
 
 .form-button:hover {
   background: #16a34a;
+}
+
+/* legenda */
+.map-legend {
+  margin-left: auto; /* 👈 isso joga ela pro canto direito */
+}
+
+/* itens */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button {
+  background: #22c55e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.form-button:hover {
+  background: #16a34a;
+}
+
+/* mini pin */
+.legend-pin {
+  width: 14px;
+  height: 14px;
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 50% 0;
+}
+
+/* cores */
+.legend-pin.full {
+  background: #22c55e;
+}
+
+.legend-pin.none {
+  background: #ef4444;
+}
+
+.legend-pin.halfMass {
+  background: linear-gradient(135deg, #ef4444 50%, #22c55e 50%);
+}
+
+.legend-pin.halfConfession {
+  background: linear-gradient(135deg, #22c55e 50%, #ef4444 50%);
+}
+
+footer {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza o conjunto */
+
+  gap: 20px;
+  background: #0f172a;
+}
+
+/* 🖥️ Mobile */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .map-legend {
+    margin-left: 0; /* reset */
+    width: 100%;
+    max-width: 300px;
+  }
+
 }
