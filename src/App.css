@@ -188,3 +188,23 @@ body,
   height: 100%;
   margin: 0;
 }
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 220px;
+}
+
+.search-bar button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

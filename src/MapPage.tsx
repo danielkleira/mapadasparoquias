@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Map, Overlay } from "pigeon-maps";
 import { churches } from "./data/churches";
 import type { Church } from "./data/churches";
@@ -17,12 +17,88 @@ function getChurchStatus(church: Church) {
 export default function MapPage() {
   const [selectedChurch, setSelectedChurch] = useState<Church | null>(null);
 
+  // centro do mapa
+  const [center, setCenter] = useState<[number, number]>([-22.911, -43.18]);
+
+  const [zoom, setZoom] = useState(12);
+
+  // CEP digitado
+  const [cep, setCep] = useState("");
+
+  // pega localização do usuário automaticamente
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setCenter([position.coords.latitude, position.coords.longitude]);
+
+        setZoom(14);
+      },
+      (error) => {
+        console.log("Usuário não permitiu localização", error);
+      },
+    );
+  }, []);
+
+  // busca CEP
+  async function handleSearchCEP() {
+    const cleanCep = cep.replace(/\D/g, "");
+
+    if (cleanCep.length !== 8) {
+      alert("CEP inválido");
+      return;
+    }
+
+    try {
+      // ViaCEP -> pega endereço
+      const response = await fetch(
+        `https://viacep.com.br/ws/${cleanCep}/json/`,
+      );
+
+      const data = await response.json();
+
+      // transforma endereço em coordenadas
+      const geoResponse = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${data.logradouro},${data.localidade},${data.uf}`,
+      );
+
+      const geoData = await geoResponse.json();
+
+      if (geoData.length > 0) {
+        const lat = parseFloat(geoData[0].lat);
+        const lon = parseFloat(geoData[0].lon);
+
+        setCenter([lat, lon]);
+        setZoom(15);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao buscar CEP");
+    }
+  }
   return (
     <div className="map-container">
       <h1 className="title">Mapa das Paróquias, missas e confissões</h1>
+      {/* BUSCA CEP */}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Digite um CEP"
+          value={cep}
+          onChange={(e) => setCep(e.target.value)}
+        />
 
+        <button onClick={handleSearchCEP}>Buscar CEP</button>
+      </div>
       <div className="map-wrapper">
-        <Map height={600} defaultCenter={[-22.911, -43.18]} defaultZoom={12}>
+        <Map
+          height={600}
+          center={center}
+          zoom={zoom}
+          onBoundsChanged={({ center, zoom }) => {
+            setCenter(center);
+            setZoom(zoom);
+          }}
+        >
           {churches.map((church) => (
             <Overlay key={church.id} anchor={[church.lat, church.lng]}>
               <div
