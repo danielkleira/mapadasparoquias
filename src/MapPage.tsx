@@ -20,7 +20,7 @@ export default function MapPage() {
   // centro do mapa
   const [center, setCenter] = useState<[number, number]>([-22.911, -43.18]);
 
-  const [zoom, setZoom] = useState(12);
+  const [zoom, setZoom] = useState(14);
 
   // CEP digitado
   const [cep, setCep] = useState("");
@@ -78,6 +78,8 @@ export default function MapPage() {
   return (
     <div className="map-container">
       <h1 className="title">Mapa das Paróquias, missas e confissões</h1>
+
+      <h4>920 locais de culto registrados</h4>
       {/* BUSCA CEP */}
       <div className="search-bar">
         <input

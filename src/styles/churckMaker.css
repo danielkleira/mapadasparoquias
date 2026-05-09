@@ -1,0 +1,56 @@
+.custom-marker {
+  transform: translate(-50%, -100%) rotate(-45deg);
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+
+  transition: 0.2s;
+}
+
+/* 🟢 Verde total */
+.custom-marker.full {
+  background: #22c55e;
+}
+
+/* 🔴 Vermelho total */
+.custom-marker.none {
+  background: #ef4444;
+}
+
+/* 🟡 Metade verde / vermelho */
+.custom-marker.halfConfession {
+  background: linear-gradient(
+    135deg,
+    /* ajustado por causa da rotação */ #22c55e 50%,
+    #ef4444 50%
+  );
+}
+.custom-marker.halfMass {
+  background: linear-gradient(135deg, #ef4444 50%, #22c55e 50%);
+}
+
+/* Hover (mantém lógica de cor) */
+.custom-marker.full:hover {
+  background: #16a34a;
+}
+
+.custom-marker.none:hover {
+  background: #dc2626;
+}
+
+.custom-marker.half:hover {
+  background: linear-gradient(135deg, #16a34a 50%, #dc2626 50%);
+}
+
+/* efeito de hover geral */
+.custom-marker:hover {
+  transform: translate(-50%, -100%) rotate(-45deg) scale(1.1);
+}

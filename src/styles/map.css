@@ -33,14 +33,10 @@
   width: 320px;
   max-height: 90%;
   overflow-y: auto;
-
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(8px);
-
   border-radius: 12px;
   padding: 16px;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -88,7 +84,7 @@
 
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
 .church-panel button:hover {
@@ -122,18 +118,12 @@
 .custom-marker {
   transform: translate(-50%, -100%) rotate(-45deg);
   cursor: pointer;
-
-  width: 40px;
-  height: 40px;
-
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50% 50% 50% 0;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-
-  transition: 0.2s;
 }
 
 /* Ícone continua normal */
@@ -176,10 +166,6 @@
   background: linear-gradient(135deg, #16a34a 50%, #dc2626 50%);
 }
 
-/* efeito de hover geral */
-.custom-marker:hover {
-  transform: translate(-50%, -100%) rotate(-45deg) scale(1.1);
-}
 .form-link-container {
   display: flex;
   justify-content: center;
